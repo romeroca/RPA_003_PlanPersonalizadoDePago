@@ -1,0 +1,16 @@
+Sub FormatearColumnaFecha()
+    Dim Hoja As Worksheet
+    Dim Celda As Range
+    
+    ' Especifica el nombre de la hoja de Excel en la que deseas trabajar
+    Set Hoja = ThisWorkbook.Sheets("Reporte")
+    
+    ' Recorre las celdas en la columna "E"
+    For Each Celda In Hoja.Range("E:E")
+        ' Verifica si el nombre de la celda es "Fecha"
+        If Celda.Name.Name = "Fecha" Then
+            ' Formatea la celda como fecha (puedes cambiar el formato según tu preferencia)
+            Celda.NumberFormat = "dd/mm/yyyy"
+        End If
+    Next Celda
+End Sub
